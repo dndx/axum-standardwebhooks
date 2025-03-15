@@ -30,7 +30,6 @@ axum-standardwebhooks = "1"
 use axum::{Router, routing::post, Json};
 use axum_standardwebhooks::{StandardWebhook, SharedWebhook, Webhook};
 use serde_json::Value;
-use std::sync::Arc;
 use axum::extract::FromRef;
 
 async fn webhook_handler(StandardWebhook(Json(payload)): StandardWebhook<Json<Value>>) -> String {
